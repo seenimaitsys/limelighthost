@@ -1,0 +1,46 @@
+// when not install sass server the use [npm install scss and sass -w scss/main.scss{from} assets/css/custom.css{to}]
+// (or)
+//how to compile sass file [ install live sass-> setting-> search live sass-> edit in setting.json -> add tis code ->
+//    "liveSassCompile.settings.formats": [
+//     {
+//       "format": "compressed",
+//       "extensionName": ".min.css",
+//       "savePath": "/src/assert/css"
+//     }
+//   ],
+//->seve this.
+
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/_mixins.scss";
+
+@import "./utilities/bootstrap-api-utilities";
+$grid-breakpoints: (
+  xs: 0,
+  xsm: 362px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 2000px,
+);
+
+.display-webkit-box {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* Number of lines to show */
+}
+//form design
+
+.letterSpacing-1 {
+  letter-spacing: 1px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.box-shadow-video {
+  box-shadow: 1px 24px 17px -32px rgba(0, 0, 0, 0.45);
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

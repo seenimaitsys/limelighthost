@@ -1,0 +1,160 @@
+// Import Bootstrap Utils first
+// otherwise our amends aren't added correctly
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    "width": (
+      property: width,
+      class: w,
+      values: (
+        5: 5%,
+        30: 30%,
+        42: 42%,
+        85: 85%,
+        130: 130px,
+        140: 140px,
+        150: 150px,
+
+        51: 50px,
+      ),
+    ),
+    "height": (
+      property: height,
+      class: h,
+      values: (
+        44: 44px,
+        20: 20px,
+        50: 50px,
+        65: 65px,
+        100: 100px,
+        300: 300px,
+        450: 450px,
+      ),
+    ),
+    "max-width": (
+      property: max-width,
+      class: mw,
+      values: (
+        160: 160px,
+      ),
+    ),
+    "font-size": (
+      rfs: true,
+      property: font-size,
+      class: fs,
+      values: (
+        35: 35px,
+        18: 18px,
+        16: 16px,
+        15: 15px,
+        13: 13px,
+        40: 40px,
+        25: 25px,
+        23: 22px,
+        20: 20px,
+      ),
+    ),
+    "font-weight": (
+      property: font-weight,
+      class: fw,
+      values: (
+        900: 900,
+      ),
+    ),
+    "color": (
+      property: color,
+      class: text,
+      values:
+        map-merge(
+          $theme-colors,
+          (
+            gray-100: #b9b9b9,
+            gray-200: #3e3e3e,
+            gray-300: #3f3f3f,
+          )
+        ),
+    ),
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values: (
+        next-btn1: #1da5df33,
+        next-btn2: #1da5df33,
+        next-btn3: #1da5df,
+        Approved-btn: #42ff00,
+        Decline-btn: #ff5858,
+      ),
+    ),
+    "margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: (
+        6: 6rem,
+        n3: -3%,
+        8: 8rem,
+      ),
+    ),
+    "margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: (
+        10: 10%,
+      ),
+    ),
+    "margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values: (
+        n20: -20px,
+        n10: -10px,
+      ),
+    ),
+    "padding": (
+      responsive: true,
+      property: padding,
+      class: p,
+      values: (
+        10: 10px,
+
+        15: 15px,
+      ),
+    ),
+    "gradient": (
+      property: background-image,
+      class: bg,
+      values: (
+        login-bg: linear-gradient(180.2deg, #00463e 0.18%, #595959 150.98%),
+        login-submit: linear-gradient(90deg, #78c1c2 0%, #2a4e8c 100%),
+        decline_Reason:
+          linear-gradient(180.2deg, #a92d2d 0.18%, #502e2e 150.98%),
+        select-custom-icon:
+          url("../../src/assets/images/VectorNo_border_Dowm.svg"),
+      ),
+    ),
+    "border": (
+      property: border,
+      values: (
+        login-input: 1px solid #ffffff,
+        modal-border: 2px solid #33ceff,
+        video-border: 3px solid #1da5df,
+        bt-border: 2px solid #909090,
+        vl-border: 1px solid #00ffb2,
+      ),
+    ),
+    "rounded": (
+      property: border-radius,
+      class: rounded,
+      values: (
+        30: 30px,
+        22: 22px,
+        10: 10px,
+        18: 18px,
+      ),
+    ),
+  )
+);
