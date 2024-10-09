@@ -26,7 +26,7 @@ const pool = new Pool({
   host: DB_HOST, // Use the Public IP address or FQDN of your SQL instance
   port: DB_PORT,
   database: DB_NAME,
-  ssl: sslConfig,//not localhost
+  ssl: { rejectUnauthorized: false },
 });
 const testConnection = async () => {
   try {
