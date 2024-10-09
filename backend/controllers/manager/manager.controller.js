@@ -12,6 +12,7 @@ export const doGetCount = async (req, res, next) => {
     res.status(200).json(result);
   } catch (error) {
     next(error);
+    
   }
 };
 export const doGetList = async (req, res, next) => {

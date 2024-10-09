@@ -13,7 +13,7 @@ import {
 } from "../../controllers/manager/manager.controller.js";
 const manager = express.Router();
 //GET
-manager.get("/getcount", authenticateToken, authorizeRole, doGetCount);
+manager.post("/getcount", authenticateToken, authorizeRole, doGetCount);
 
 //POST
 manager.post("/videolist", authenticateToken, authorizeRole, doGetList);

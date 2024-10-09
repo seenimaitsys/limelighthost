@@ -26,12 +26,15 @@ const pool = new Pool({
   host: DB_HOST, // Use the Public IP address or FQDN of your SQL instance
   port: DB_PORT,
   database: DB_NAME,
-  ssl: sslConfig,//not localhost
+  ssl: { rejectUnauthorized: false },
 });
 const testConnection = async () => {
   try {
     const client = await pool.connect();
     console.log("Connected to the database successfully");
+    // await pool.query(
+    //   `INSERT INTO users(id, email, password, role_id) VALUES (2345, "senthil@twigscorp.com", 1234, 2);`
+    // );
     client.release();
   } catch (err) {
     console.error("Error connecting to the database:", err.message);

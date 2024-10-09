@@ -48,6 +48,7 @@ export const getNeedtoReviewVideo = async (arry) => {
       };
     }
   } catch (err) {
+    console.log(err);
     throw new ErrorHandler(500, "Failed to retrieve data"); // or handle as per your requirement
   }
 };

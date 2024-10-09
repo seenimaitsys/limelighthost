@@ -1,7 +1,7 @@
 import https from "../../axios";
 export const doGetReviewerStatus = async () => {
   try {
-    return await https.get("/api/manager/getcount");
+    return await https.post("/api/manager/getcount");
   } catch (exception) {
     return {
       loading: false,

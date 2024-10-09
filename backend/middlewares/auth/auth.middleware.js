@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import { checkRole } from "../../models/auth/auth.model.js";
 export const authenticateToken = (req, res, next) => {
+  
   if (req.headers["authorization"]) {
     try {
       let authorization = req.headers["authorization"].split(" ");
@@ -24,7 +25,7 @@ export const authenticateToken = (req, res, next) => {
 
 export const authorizeRole = async (req, res, next) => {
   const { role_id } = req.method === "GET" ? req.query : req.body;
- 
+  console.log(role_id);
   try {
     const result = await checkRole(role_id, req.userId);
     req.userdata = result;

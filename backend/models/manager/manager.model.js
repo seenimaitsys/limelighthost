@@ -2,6 +2,7 @@ import pool from "../../config/database.js";
 import { ErrorHandler } from "../../helpers/handleError/error.js";
 
 export const getVideoCount_ReviewerStatus = async () => {
+  console.log('yes')
   const client = await pool.connect(); // Get a client from the pool
   try {
     await client.query("BEGIN"); // Start the transaction

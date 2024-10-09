@@ -6,6 +6,7 @@ import manager from "./routes/manager/manager.router.js";
 import { handleError } from "./helpers/handleError/error.js";
 import { fileURLToPath } from "url";
 import path from "path";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +16,9 @@ const app = express();
 dotEnv.config();
 const port = process.env.PORT || 8080;
 app.use(express.json());
+
+app.use(cors("*"));
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Credentials", "true");
@@ -30,18 +34,18 @@ app.use(function (req, res, next) {
 
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
-});
-
 app.get("/aa", (req, res) =>
   res.send("<h1 style='text-align: center'>LIME LIGHT</h1>")
 );
 
 // Routes
-app.use("/api/auth/", auth); //Auth Roter
+app.use("/api/auth", auth); //Auth Roter
 app.use("/api/video", reviewer); //Reviewer Router
 app.use("/api/manager", manager); //Manager Router
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
+});
 
 app.use(handleError);
 app.listen(port, function () {
